@@ -1,0 +1,12 @@
+.span {
+  margin: auto;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 20px;
+}
+
+.icon {
+  margin-right: 20px;
+}

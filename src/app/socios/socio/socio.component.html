@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LaboratorioSamsung</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<div id="contenedor-socio">
+  <h1>Registro Socio</h1>
+  <form [formgroup]="socio" (ngsubmit)="enviar()">
+      <mat-form-field class="campo-socio" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matinput id="nombre" formcontrolname="nombre" name="nombre">
+      </mat-form-field>
+
+      <mat-form-field class="campo-socio" appearance="fill">
+          <mat-label>Apellidos</mat-label>
+          <input matinput id="apellidos" formcontrolname="apellidos" name="apellidos">
+      </mat-form-field>
+
+      <mat-form-field class="campo-socio" appearance="fill">
+          <mat-label>Número de Socio</mat-label>
+          <input matinput id="numero-de-socio" formcontrolname="numeroDeSocio" name="numeroDeSocio">
+      </mat-form-field>
+
+      <mat-form-field class="campo-socio" appearance="fill">
+          <mat-label>DNI</mat-label>
+          <input matinput id="dni" formcontrolname="dni" name="dni">
+      </mat-form-field>
+
+      <mat-form-field class="campo-socio" appearance="fill">
+          <mat-label>Teléfono</mat-label>
+          <input matinput id="telefono" formcontrolname="telefono" name="telefono">
+      </mat-form-field>
+
+      <mat-radio-group id="sexo" formcontrolname="sexo" name="sexo">
+          <mat-label>Sexo</mat-label>
+          <mat-radio-button class="radio" value="Hombre">Hombre</mat-radio-button>
+          <mat-radio-button class="radio" value="Mujer">Mujer</mat-radio-button>
+      </mat-radio-group>
+
+      <button type="submit" mat-raised-button color="primary" id="boton-enviar">Enviar</button>
+  </form>
+</div>
+
+<div id="contenedor-lista">
+  <h1>Lista socios</h1>
+  <mat-list id="lista-socios">
+      <mat-list-item *ngfor="let s of socios" class="elemento-lista">
+          <div class="contenedor-botones">
+              <button class="boton-lista" mat-raised-button color="accent" (click)="s == socioModificado ? terminarModificacion($event, s) : modificar($event, s)">{{ s == socioModificado ? "Hecho" : "Modificar" }}</button>
+              <button class="boton-lista" mat-raised-button color="basic" (click)="eliminar($event, s)">Eliminar</button>
+          </div>
+
+          <div>
+              <span class="dato-socio">{{ s == socioModificado ? socio.value.nombre : s.nombre }}</span>
+              <span class="dato-socio">{{ s == socioModificado ? socio.value.apellidos : s.apellidos }}</span>
+              <span class="dato-socio">{{ s == socioModificado ? socio.value.numeroDeSocio : s.numeroDeSocio }}</span>
+              <span class="dato-socio">{{ s == socioModificado ? socio.value.dni : s.dni }}</span>
+              <span class="dato-socio">{{ s == socioModificado ? socio.value.telefono : s.telefono }}</span>
+              <span class="dato-socio">{{ s == socioModificado ? socio.value.sexo :s.sexo }}</span>
+          </div>
+      </mat-list-item>
+  </mat-list>
+</div>
+</html>

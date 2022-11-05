@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin-top: 10px;
+  text-align: center;
+  color: rgb(116, 97, 97);
+  font-weight: 300;
+}
+
+#contenedor-socio {
+  display: inline-block;
+  width: 50%;
+  height: 110%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-top: 12px;
+  background-color: #424242;
+}
+
+form {
+  min-width: 150px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 20px;
+  margin: 0 auto;
+  color: rgb(221, 117, 117);
+}
+
+.campo-socio {
+  width: 100%;
+}
+
+.radio {
+  display: block;
+  margin-top: 5px;
+}
+
+#boton-enviar {
+  margin-top: 20px;
+}
+
+#contenedor-lista {
+  display: inline-block;
+  width: 60%;
+  height: 100%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-top: 15px;
+  background-color: #ebcbbf;
+  text-align: center;
+  color: white;
+}
+
+.dato-socio {
+  padding-right: 5px;
+  color: rgb(133, 128, 128);
+}
+
+.dato-socio::after {
+  content : "|";
+  margin-left: 5px;
+  color: rgb(95, 90, 90);
+}
+
+.boton-lista {
+  margin-right: 5px;
+  text-align: center;
+}
